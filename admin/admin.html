@@ -1,0 +1,81 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="globle.css">
+    </head>
+    <body>
+            <div class="mainnav flex">
+                <div class="logo">
+                    <h1><a href="/">Gamers<span>Hub</span></a></h1>
+                </div>
+            </div>
+            <div class="navRight">
+                <div class="menu" onclick="toggle()">
+                    <span class="bar b1"></span>
+                    <span class="bar b2"></span>
+                    <span class="bar b3"></span>
+                </div>
+            </div>
+        </section>
+        <section id="mid">
+            <div class="symbol" onclick="show()">
+                <span class="cross c1"></span>
+                <span class="cross c2"></span>
+            </div>
+            <div class="midLeft" id="work">
+                <div class="list">
+                    <ul>
+                        <li><img src="icons/dashboard.png" alt=""> <a href="admin.html"><span>DASHBOARD</span></a></li>
+                        <li><img src="icons/game-design.png" alt=""> <a href="addgames.html"><span>Games</span></a></li>
+                        <li><img src="icons/users-alt.png" alt=""><a href="user.html"><span>USERS</span></a></li>
+                        <li><img src="icons/exit.png" alt=""><a href="index.php"><span>LOG OUT</span></a></li>
+                    </ul>
+                </div>
+            </div><div class="midMid">
+                <div class="midMid1">
+                    <div class="topHead">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>               
+                <div class="game-container">
+                    <div class="progress1 progress">
+                        <img src="path_to_image1.jpg" alt="Image 1">
+                        <h3>ABCDE Development</h3>
+                        <button type="button" class="update-btn" onclick="showUpdateForm()">Update</button>
+                        <button type="button" class="delete-btn">Delete</button>
+                    </div>
+                </div>            
+
+                <div id="updateForm" class="update-form">
+                    <h2>Update Game</h2>
+                    <label for="updated-game-name">Game Name:</label>
+                    <input type="text" id="updated-game-name" name="updated-game-name" required>
+                    <label for="updated-game-image">Game Image URL:</label>
+                    <input type="text" id="updated-game-image" name="updated-game-image" required>
+                    <label for="updated-game-price">Game Price:</label>
+                    <input type="text" id="updated-game-price" name="updated-game-price" required>
+                    <label for="updated-game-rate">Game Rate:</label>
+                    <input type="text" id="updated-game-rate" name="updated-game-rate" required>
+                    <button type="button" onclick="updateGame()">Update Game</button>
+                </div>
+                </div>
+                <script>
+                    function showUpdateForm() {
+                        var form = document.getElementById("updateForm");
+                        if (form.style.display === "none") {
+                            form.style.display = "block";
+                        } else {
+                            form.style.display = "none";
+                        }
+                    }
+                    function updateGame() {    
+                        var updatedGameName = document.getElementById("updated-game-name").value;
+                        var updatedGameImage = document.getElementById("updated-game-image").value;
+                        console.log("Game Name: " + updatedGameName);
+                        console.log("Game Image URL: " + updatedGameImage);
+                    }
+                </script>
+        <script src="script.js"></script>
+</body>
+</html>
